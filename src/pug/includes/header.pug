@@ -1,0 +1,29 @@
+
+header.header.headroom
+  div.header__start
+    a.header__logo(href="/" aria-label="Logo du Conservatoire")
+      |
+      include ../../../assets/img/svg/logo.svg
+  div.header__end
+    button.header__menuBtn.menuBurger(aria-label="menu" aria-expanded="false" aria-controls="mainNav")
+      span.menuBurger__bar(aria-hidden="true")
+      
+    // Début du formulaire de recherche
+    .searchForm
+      button.searchForm__close(aria-label='Fermer le formulaire de recherche')
+        include ../../../assets/img/svg/icon_cross.svg
+      form.searchForm__form(action='#' method='get')
+        label.sr-only(for='searchForm') Rechercher
+        input#searchForm.searchForm__input(type='search' name='s' placeholder='Rechercher…' value='')
+        button.searchForm__submit(type='submit' aria-label='Rechercher')
+          include ../../../assets/img/svg/icon_search.svg
+    // Fin du formulaire de recherche
+
+    //- include menu-dropdown.pug
+    // Début du menu
+    include menu-simple.pug
+    // Fin du menu
+
+    button.header__search(aria-label="Rechercher")
+      |
+      include ../../../assets/img/svg/icon_search.svg

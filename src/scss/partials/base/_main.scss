@@ -1,0 +1,41 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: $vermillion;
+}
+
+::selection {
+  background: $vermillion;
+}
+
+body {
+  font-family: $sans-serif;
+  @include fluid-type($body);
+  line-height: 1.6;
+  background-color: $lightColor;
+}
+
+// Typographie 
+h1, h2 {
+  font-family: $mono;
+  font-weight: normal;
+}
+
+h1, .h1 {
+  @include fluid-type($heading-1);
+  line-height: 1.1;
+}
+
+h2, .h2 {
+  @include fluid-type($heading-2);
+  line-height: 1.1;
+}
+
+h3, .h3 {
+  @include fluid-type($heading-3);
+  line-height: 1.4;
+}

@@ -1,0 +1,19 @@
+nav#mainNav.header__menu.menu(aria-label="Menu principal")
+  ul.menu__list
+    li.menu__item
+      a.menu__link(href="conservatoire.pug") Le conservatoire
+    li.menu__item.menu__item--hasDropdown
+      a.menu__link(href="#") Enseignements
+      ul.submenu__list
+        li.submenu__item
+          a.menu__link(href="#") Musique
+        li.submenu__item
+          a.menu__link(href="#") Théâtre
+        li.submenu__item
+          a.menu__link(href="#") Danse
+    li.menu__item
+      a.menu__link(href="agenda.pug") Agenda
+    li.menu__item
+      a.menu__link(href="#") Contact
+    li.menu__item.menu__item--btn
+      a.menu__link(href="inscription.pug") S'inscrire

@@ -1,0 +1,71 @@
+.card {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: $space-3 1fr;
+  grid-template-rows: 200px $space-5 1fr;
+  margin-top: $space-4;
+
+  @media (min-width: $mobile) {
+    grid-template-columns: 2fr 11fr;
+  }
+
+  @media (min-width: $tablet) {
+    margin-top: 0;
+  }
+
+  &:hover {
+    .card__img {
+      background-color: transparent;
+
+      &::before {
+        background-color: transparent;
+      }
+
+      img {
+        filter: inherit;
+      }
+    }
+  }
+}
+
+.card__img {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.card__title {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  z-index: 1;
+  align-self: flex-end;
+  color: $lightColor;
+  font-family: $mono;
+  font-weight: normal;
+  margin-right: $space-2;
+  @include fluid-type($heading-2);
+  line-height: 1.1;
+}
+
+.card__titleLink {
+  color: $lightColor;
+  text-decoration: none;
+  display: block;
+}
+
+.card__caption {
+  background-color: $lightColor;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 2;
+  z-index: 1;
+  padding: $space-3;
+}
+
+.card__date {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card__link {
+  margin: 0;
+}
+

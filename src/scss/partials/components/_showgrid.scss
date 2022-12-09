@@ -1,0 +1,70 @@
+// Afficher la grille
+
+:root {
+  --offset: #{$marginPage};
+  --max_width: #{$container};
+  --columns: 4;
+  --gutter: #{$space-5};
+  --color: hsla(0, 100%, 50%, 0.15);
+  /* Helper variables */
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(
+    to right,
+    var(--color),
+    var(--color) var(--column-width),
+    transparent var(--column-width),
+    transparent var(--repeating-width)
+  );
+}
+
+@media (min-width: $tablet) {
+  :root {
+    --columns: 12;
+  }
+}
+
+body {
+  position: relative;
+  &::before {
+    position: absolute;
+    inset: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - (2 * var(--offset)));
+    max-width: var(--max_width);
+    min-height: 100vh;
+    content: '';
+    background-image: var(--background-columns);
+    background-size: var(--background-width) 100%;
+    opacity: 0;
+    transform-origin: top center;
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity .5s;
+  }
+  &.show::before {
+    opacity: 1;
+  }
+}
+
+.btnGrid {
+  display: none;
+  position: fixed;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  top: 300px;
+  left: 0;
+  z-index: 20;
+  outline: 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: rgba(80, 80, 80, 0.6);
+  color: rgba(255,255,255, 0.6);
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}

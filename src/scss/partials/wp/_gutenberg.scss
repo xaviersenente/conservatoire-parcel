@@ -1,0 +1,67 @@
+.main-column {
+  margin: 96px 0;
+  padding-left: $space-3;
+  padding-right: $space-3;
+  @media (min-width: $mobile) {    
+    box-sizing: content-box;
+    max-width: calc( #{$colMax} * 6 + #{$gutter} * 5);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: $darkColor;
+    border-bottom: 1px solid $gray-300;
+    transition: all .3s;
+    &:hover {
+      border-bottom-color: $darkColor;
+    }
+  }
+
+  figure {
+    margin: 0;
+    @media (min-width: $tablet) {
+      margin-left:  calc( 0px - ( #{$colMax} + #{$gutter} ) );
+      margin-right: calc( 0px - ( #{$colMax} + #{$gutter} ) );
+    }
+    @media (min-width: $tablet) {
+      margin-top: $space-5;
+      margin-bottom: $space-5;
+    }
+    
+  }
+
+  figcaption {
+    @include fluid-type($small);
+    color: $gray-300;
+  }
+}
+
+.wp-block-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $gray-200;
+  @include fluid-type($small);
+
+  a:first-child {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: $darkColor;
+    border: none;
+  }
+
+  &__button {
+    text-decoration: none;
+    background-color: $darkColor;
+    color: $lightColor;
+    padding: 4px 20px;
+    border-radius: 40px;
+  }
+}

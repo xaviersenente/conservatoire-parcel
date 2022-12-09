@@ -1,0 +1,77 @@
+// Couleurs
+$violet:     #1d096b;
+$vermillion: #feaa9b;
+$darkColor:  #1C1514;
+$gray-300:   #828282;
+$gray-200:   #CDC8C6;
+$gray-100:   #E9E7E4;
+$lightColor: #FAFAFA;
+
+// Typpographies
+$mono: 'Space Mono', monospace;
+$sans-serif: 'Mulish', sans-serif;
+
+// Espaces
+$space-1: 12px;
+$space-2: 16px;
+$space-3: 24px;
+$space-4: 32px;
+$space-5: 48px;
+$space-6: 96px;
+
+// Breakpoints
+$mobile:  640px;
+$tablet:  960px;
+$desktop: 1340px;
+
+// Grille
+$nbCol : 12;            // Nombre de colonnes de la grille
+$gutter : $space-5;     // Dimension des gouttières de la grille
+$marginPage : $space-3; // Dimensions des marges extérieures à la grille
+
+// Dimension du conteneur 
+$container : calc( #{$desktop} - #{$marginPage} * 2 );
+// Dimension minimum d'une colonne
+$colMin : 0;
+// Dimension maximum d'une colonne
+$colMax : calc( ( #{$container} - #{$gutter} * ( #{$nbCol} - 1 ) ) / #{$nbCol} );
+
+// Dimension de la colonne "réduite" pour le texte
+$module: 6;
+$widthMainColumn : calc( #{$colMax} * #{$module} + #{$gutter} * ( #{$module} - 1 ));
+
+// Tailles typographiques => utilisées par la Mixin fluid-type();
+$body: (
+  min : 13px,
+  max : 15px
+);
+
+$heading-1: (
+  min : 36px,
+  max : 64px
+);
+
+$heading-2: (
+  min : 28px,
+  max : 32px
+);
+
+$heading-3: (
+  min : 18px,
+  max : 24px
+);
+
+$excerpt: (
+  min : 22px,
+  max : 28px
+);
+
+$small: (
+  min : 11px,
+  max : 13px
+);
+
+$display-1: (
+  min : 48px,
+  max : 64px
+);

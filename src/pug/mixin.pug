@@ -1,0 +1,58 @@
+//- Image bi-ton
+mixin duotone(imgName, imgAlt, imgSize, imgWidth, imgHeight)
+  picture.duotone(class!=attributes.class)
+    //- source(srcset!=`../../../assets/img/photos/${ imgName }.jpg?as=avif&width=${ imgSize }`, type="image/avif")
+    //- source(srcset!=`../../../assets/img/photos/${ imgName }.jpg?as=webp&width=${ imgSize }`, type="image/webp")
+    img(src=`../../../assets/img/photos/${ imgName }.jpg?width=${ imgSize }`, alt=`${ imgAlt }`, width=`${ imgWidth }`, height=`${ imgHeight }`)
+
+//- Boutons
+mixin btn(btnHref, btnText)
+  a.btn(href=`${ btnHref }`, class!=attributes.class)
+    svg.btn__arrow(width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+      path(d='M23.354 12.354a.5.5 0 000-.708l-3.182-3.182a.5.5 0 10-.707.708L22.293 12l-2.828 2.828a.5.5 0 10.707.708l3.182-3.182zM0 12.5h23v-1H0v1z' fill='#1C1514')
+    = btnText
+
+//- Hero
+mixin hero(title, chapo, imgName, imgAlt)
+  // section hero
+  div.grid.hero
+    header.hero__header
+      h1.hero__title= title
+    div.hero__chapo
+      p.hero__text= chapo
+    +duotone(imgName, imgAlt, 2000, 2000, 1000)(class="hero__img")
+  // Fin section hero
+
+//- Blocs article
+mixin card(imgName, imgAlt, title, date, excerpt, link)
+  article.card
+    +duotone(imgName, imgAlt, 800, 384, 250)(class="card__img")
+    h3.card__title
+      a.card__titleLink(href=`${ link }`)= title
+    div.card__caption
+      p.card__date= date
+      p.card__excerpt= excerpt
+      a.card__link.morelink(href=`${ link }`) Plus d'info
+
+//- Search result
+mixin searchResult(contentType, title, chapo, link)
+  article.searchResult
+    div.searchResult__type= contentType
+    h2.searchResult__title
+      a.searchResult__titleLink(href=`${ link }`)= title
+    p.searchResult__chapo= chapo
+    a.searchResult__link.morelink(href=`${ link }`) Plus d'info
+
+//- Blocs chiffres
+mixin stat(chiffre, label)
+  p.stat
+    span.stat__chiffre= chiffre
+    span.stat__text= label
+
+//- Carousel item
+mixin itemCarousel(imgName, imgAlt, imgSize, imgWidth, imgHeight)
+  picture.carousel__item
+    //- source(srcset!=`../../../assets/img/photos/${ imgName }.jpg?as=avif&width=${ imgSize }`, type="image/avif")
+    //- source(srcset!=`../../../assets/img/photos/${ imgName }.jpg?as=webp&width=${ imgSize }`, type="image/webp")
+    img(src=`../../../assets/img/photos/${ imgName }.jpg?width=${ imgSize }`, alt=`${ imgAlt }`, width=`${ imgWidth }`, height=`${ imgHeight }`)
+    

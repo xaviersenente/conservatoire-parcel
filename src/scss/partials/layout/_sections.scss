@@ -1,0 +1,72 @@
+.section {
+  position: relative;
+  margin-top: $space-6;
+  margin-bottom: $space-6;
+
+  @media (min-width: $tablet) {
+    &:has(header)::before {
+      content: "";
+      grid-column: 1 / span 2;
+      background-color: $darkColor;
+      height: 1px;
+      margin-top: rem(54);
+    }
+  }
+
+  &--bg {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: rem(160);
+    padding-bottom: rem(160);
+    color: $lightColor;
+    &:has(header)::before {
+      background-color: $lightColor;
+    }
+  }
+  
+
+  &__header {
+    @media (min-width: $tablet) {
+      grid-column: 3 / span 6;
+      &--full {
+        grid-column: 3 / span 10;
+      }
+    }
+  }
+
+  &__title {
+    @include fluid-type($heading-1);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  &__intro {
+    @include fluid-type($excerpt);
+    line-height: 1.5;
+  }
+
+  &__link {
+    @media (min-width: $tablet) {
+      grid-column: 9 / span 4;
+      justify-self: end;
+      align-self: flex-start;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    object-fit: cover;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-color: $violet;
+      opacity: 0.5;
+    }
+  }
+}
+

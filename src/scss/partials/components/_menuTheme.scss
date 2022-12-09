@@ -1,0 +1,41 @@
+.menuTheme {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: $space-3;
+    
+    @media (min-width: $mobile) {
+      gap: $gutter;
+    }
+  }
+
+  &__item {
+    @include fluid-type($excerpt);
+    line-height: 1.5;
+    font-family: $mono;
+    font-weight: normal;
+  
+    @media (min-width: $tablet) {
+      @include fluid-type($heading-2);
+      line-height: 1.1;
+    }
+  }
+
+  &__link {
+    color: $darkColor;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    svg {
+      margin-right: 10px;
+    }
+
+    @media (min-width: $mobile) {
+      flex-direction: row;
+    }
+  }
+}

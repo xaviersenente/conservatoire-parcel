@@ -1,0 +1,97 @@
+extends ../base.pug
+
+block vars
+  -var title     = '';
+  -var bodyClass = 'home';
+
+block main
+
+  // section hero
+  div.grid.hero
+    header.hero__header
+      h1.hero__title Conservatoire Henri Dutilleux
+      h2.hero__subTitle Conservatoire à rayonnement départemental du grand Belfort
+    div.hero__chapo
+      nav.hero__nav.menuTheme
+        ul.menuTheme__list.listUnstyled
+          li.menuTheme__item
+            a.menuTheme__link(href="#")
+              include ../../../assets/img/svg/icon_musique.svg
+              | Musique
+          li.menuTheme__item
+            a.menuTheme__link(href="#")
+              include ../../../assets/img/svg/icon_theatre.svg
+              | Théâtre
+          li.menuTheme__item
+            a.menuTheme__link(href="#")
+              include ../../../assets/img/svg/icon_danse.svg
+              | Danse
+    +duotone("agenda-musique-06", "violoncelles", 2000, 2000, 1000)(class="hero__img")
+    div.hero__patterns.rellax(data-rellax-speed="-5")
+      include ../../../assets/img/svg/pattern_curvesLines.svg
+  // Fin section hero
+
+  // section Conservatoire
+  section.grid.crd
+    div.crd__img
+      picture
+        source(srcset!="../../../assets/img/photos/crd-int-01.jpg?as=avif&width=1000" type="image/avif")
+        source(srcset!="../../../assets/img/photos/crd-int-01.jpg?as=webp&width=1000" type="image/webp")
+        img(src="../../../assets/img/photos/crd-int-01.jpg?width=1000" alt="Salle de musique du conservatoire", width=1000, height=1300)
+    header.crd__header
+      h2.crd__title Découvrez le Conservatoire, <strong>ses enseignements</strong>, ses équipes dans un nouveau lieu dédié à la culture artistique.
+      +btn("conservatoire.pug", "Plus d'info")(class="crd__link")
+
+    div.crd__stats
+      +stat("9", "sites")
+      +stat("84", "enseignants")
+      +stat("1500", "élèves")
+      +stat("50", "disciplines")
+    div.crd__bg
+      
+  // Fin section Conservatoire
+
+  // section Agenda
+  section.grid.section
+    header.section__header
+      h2.section__title Agenda
+      p.section__intro Lieu de création artistique, le conservatoire propose régulièrement des actions culturelles ouvertes à tous.
+    +btn("agenda.pug", "Tous les évènements")(class="section__link")
+
+    //- div.section__cards
+    +card(
+      "agenda-musique",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Asl Erdoğan.',
+      'single.pug'
+    )
+    +card(
+      "agenda-theatre",
+      "description image",
+      "Spectacle d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Asl Erdoğan.',
+      'single.pug'
+    )
+    +card(
+      "agenda-danse",
+      "description image",
+      "Concert d'ouverture",
+      "15 mars à 20h30",
+      'Dans le cadre de l’Enlèvement au sérail, Payot Genève organise une rencontre avec l’écrivain et journaliste turque dissidente Asl Erdoğan.',
+      'single.pug'
+    )
+
+  // Fin section Agenda
+
+  // section inscriptions
+  section.grid.section.section--bg
+    header.section__header.section__header--inverse
+      h2.section__title Inscriptions
+      p.section__intro Vous êtes désireux d'entrer au conservatoire ? Vous trouverez ici toutes les informations sur les les modalités d'inscriptions.
+    +btn("inscription.pug", "S'inscrire")(class="btn--outlined section__link")
+    +duotone("crd-ext-01", "facade Est du conservatoire", 2000, 2000, 1000)(class="section__img")
+  // Fin section inscriptions
+

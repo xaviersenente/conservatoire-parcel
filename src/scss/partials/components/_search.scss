@@ -1,0 +1,25 @@
+.searchResult {
+  &:not(:last-child) {
+    border-bottom: 1px solid $gray-200;
+    padding-bottom: $space-4;
+    margin-bottom: $space-4;
+  }
+  &__type {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: $gray-300;
+    @include fluid-type($small);
+  }
+
+  &__titleLink {
+    text-decoration: none;
+    color: $darkColor;
+    border: none !important;
+  }
+
+  &__link {
+    border: none !important;
+  }
+}
